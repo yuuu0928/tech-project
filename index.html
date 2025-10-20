@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柳葉魚的網站</title>
+    <style>
+        /* 基本排版 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* 頁面標題區 */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f08080;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* 導航列（Linktree樣式） */
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        nav a {
+            background-color: #f08080;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 80%;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ff6347;
+            transform: scale(1.05);
+        }
+
+        /* 內容區 */
+        section#about {
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        section#about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        section#about p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                width: 90%;
+                font-size: 1rem;
+            }
+
+            section#about {
+                padding: 20px;
+            }
+        }
+
+        /* 動態過渡效果 */
+        section#about {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        section#about.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>柳葉魚的網站</h1>
+        <p>喜歡美食、烘焙與料理</p>
+    </header>
+
+    <nav>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="mailto:your-email@example.com">Email</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>關於我</h2>
+        <p>我是柳葉魚，一名熱愛美食、烘焙和料理的高三學生。平時喜歡嘗試各種食譜，並與朋友分享自己的作品。透過這個網站，我希望能夠與更多人分享我的烘焙與料理心得。</p>
+    </section>
+
+    <footer>
+        <p>© 2025 柳葉魚</p>
+    </footer>
+
+    <script>
+        // 顯示 "關於我" 區塊的動畫
+        window.addEventListener("scroll", function() {
+            const aboutSection = document.getElementById('about');
+            const position = window.scrollY + window.innerHeight;
+            if (position > aboutSection.offsetTop) {
+                aboutSection.classList.add('visible');
+            }
+        });
+    </script>
+</body>
+</html>
+
